@@ -6,7 +6,7 @@ Personal knowledge repository synchronized across desktop and mobile. Built with
 
 ## 🕸️ Neural Knowledge Graph
 
-![Obsidian Neural Knowledge Graph](./Attachments/vault_graph.gif)
+![Obsidian Neural Knowledge Graph](./Attachments/vault_animated_graph.gif)
 
 *Live animated neural graph. The golden nucleus marks the central Home dashboard, surrounded by Cybersecurity (crimson), Computer Networks (azure), and Academic Coursework (emerald and violet).*
 
