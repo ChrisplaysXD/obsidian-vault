@@ -6,15 +6,13 @@ Personal knowledge repository synchronized across desktop and mobile. Built with
 
 ## 🕸️ Neural Knowledge Graph
 
-<p align="center">
-  <img src="Attachments/vault_graph.svg" alt="Obsidian Neural Knowledge Graph" width="100%" />
-</p>
+![Obsidian Neural Knowledge Graph](./Attachments/vault_graph.gif)
 
-*Radial constellation of the active vault nodes. Glowing golden nucleus represents the central Home dashboard, surrounded by Cybersecurity (crimson), Computer Networks (azure), and Academic Coursework (emerald and violet).*
+*Live animated neural graph. The golden nucleus marks the central Home dashboard, surrounded by Cybersecurity (crimson), Computer Networks (azure), and Academic Coursework (emerald and violet).*
 
 ---
 
-## 🧠 Domain Topology
+## 🧠 Domain Mindmap
 
 ```mermaid
 mindmap
@@ -60,6 +58,7 @@ mindmap
 │       ├── Machine Learning/
 │       └── System Administrator/
 ├── Attachments/
+│   ├── vault_graph.gif
 │   ├── vault_graph.svg
 │   ├── PRAKTIKUM CHAPTER 2.pdf
 │   └── becomingahackerday11780258583150.pdf
