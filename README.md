@@ -11,11 +11,11 @@ The graph below visualizes the vault's topological layout rendered via GitHub Me
 ```mermaid
 flowchart TD
   subgraph Hub ["🌌 Central Nexus"]
-    Home["[[Home Dashboard]]"]
+    Home["Home Dashboard"]
   end
 
   subgraph Cyber ["🛡️ Cybersecurity Domain"]
-    CMOC["[[Cybersecurity MOC]]"]
+    CMOC["Cybersecurity MOC"]
     HWKey["Hardware Security Keys (FIDO2)"]
     WiFi["Wi-Fi Security (Deauth)"]
     CTF["Compfest CTF (Crypto/Forensics)"]
@@ -23,14 +23,14 @@ flowchart TD
   end
 
   subgraph Net ["🌐 Networking Domain"]
-    NMOC["[[Computer Networks MOC]]"]
+    NMOC["Computer Networks MOC"]
     NetTips["CompTIA Network+ Exam Tips"]
     NetQuiz["CompTIA Diagnostic Test"]
     Media["Transmission Media & Cabling"]
   end
 
   subgraph Acad ["🎓 Academic Coursework"]
-    AMOC["[[Academic MOC]]"]
+    AMOC["Academic MOC"]
     
     subgraph Sem3 ["Semester 3: Core Foundations"]
       DSA["Data Structures & Algorithms"]
@@ -71,17 +71,17 @@ flowchart TD
   AMOC --> ML
 
   %% Bi-Directional Cross-Domain Graph Bridges
-  HWKey -. PAM Auth .- SysAdmin
-  HWKey -. Silicon Registers .- CPU
-  WiFi -. Physical RF .- Media
-  WiFi -. 802.1X Defense .- NetTips
-  Cloud -. Cloud Peering .- NetTips
-  CTF -. Continued Fractions .- DSA
-  ImageP -. Matrix Tensors .- ML
-  ImageP -. Memory Efficiency .- DSA
-  DataM -. Analytical Warehouses .- EDS
-  DataM -. Classification Models .- ML
-  Audit -. Multi-Tenancy Risk .- Cloud
+  HWKey -.->|PAM Auth| SysAdmin
+  HWKey -.->|Silicon Registers| CPU
+  WiFi -.->|Physical RF| Media
+  WiFi -.->|"802.1X Defense"| NetTips
+  Cloud -.->|Cloud Peering| NetTips
+  CTF -.->|Continued Fractions| DSA
+  ImageP -.->|Matrix Tensors| ML
+  ImageP -.->|Memory Efficiency| DSA
+  DataM -.->|Analytical Warehouses| EDS
+  DataM -.->|Classification Models| ML
+  Audit -.->|Multi-Tenancy Risk| Cloud
 
   classDef hub fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#000;
   classDef cyber fill:#dc2626,stroke:#991b1b,stroke-width:2px,color:#fff;
