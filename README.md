@@ -4,96 +4,41 @@ Personal knowledge repository synchronized across desktop and mobile. Built with
 
 ---
 
-## 🕸️ Interactive Knowledge Graph
+## 🕸️ Neural Knowledge Graph
 
-The graph below visualizes the vault's topological layout rendered via GitHub Mermaid. Solid links represent primary domain hierarchies, while dashed connectors represent active cross-domain bridges between low-level hardware, defensive networking, and computational theory.
+<p align="center">
+  <img src="Attachments/vault_graph.svg" alt="Obsidian Neural Knowledge Graph" width="100%" />
+</p>
+
+*Radial constellation of the active vault nodes. Glowing golden nucleus represents the central Home dashboard, surrounded by Cybersecurity (crimson), Computer Networks (azure), and Academic Coursework (emerald and violet).*
+
+---
+
+## 🧠 Domain Topology
 
 ```mermaid
-flowchart TD
-  subgraph Hub ["🌌 Central Nexus"]
-    Home["Home Dashboard"]
-  end
-
-  subgraph Cyber ["🛡️ Cybersecurity Domain"]
-    CMOC["Cybersecurity MOC"]
-    HWKey["Hardware Security Keys (FIDO2)"]
-    WiFi["Wi-Fi Security (Deauth)"]
-    CTF["Compfest CTF (Crypto/Forensics)"]
-    Audit["SkillSpector AI Security Audit"]
-  end
-
-  subgraph Net ["🌐 Networking Domain"]
-    NMOC["Computer Networks MOC"]
-    NetTips["CompTIA Network+ Exam Tips"]
-    NetQuiz["CompTIA Diagnostic Test"]
-    Media["Transmission Media & Cabling"]
-  end
-
-  subgraph Acad ["🎓 Academic Coursework"]
-    AMOC["Academic MOC"]
-    
-    subgraph Sem3 ["Semester 3: Core Foundations"]
-      DSA["Data Structures & Algorithms"]
-      CPU["Computer Architecture & CPU"]
-    end
-    
-    subgraph Sem5 ["Semester 5: Engineering Tracks"]
-      Cloud["Cloud Architecture & Overview"]
-      DataM["Data Management & Analytics"]
-      ImageP["Digital Image Processing"]
-      EDS["Enterprise Data Systems"]
-      SysAdmin["Linux SysAdmin & Ubuntu Server"]
-      ML["Machine Learning Foundations"]
-    end
-  end
-
-  %% Hierarchical Hub Links
-  Home --> CMOC
-  Home --> NMOC
-  Home --> AMOC
-
-  CMOC --> HWKey
-  CMOC --> WiFi
-  CMOC --> CTF
-  CMOC --> Audit
-
-  NMOC --> NetTips
-  NMOC --> NetQuiz
-  NMOC --> Media
-
-  AMOC --> DSA
-  AMOC --> CPU
-  AMOC --> Cloud
-  AMOC --> DataM
-  AMOC --> ImageP
-  AMOC --> EDS
-  AMOC --> SysAdmin
-  AMOC --> ML
-
-  %% Bi-Directional Cross-Domain Graph Bridges
-  HWKey -.->|PAM Auth| SysAdmin
-  HWKey -.->|Silicon Registers| CPU
-  WiFi -.->|Physical RF| Media
-  WiFi -.->|"802.1X Defense"| NetTips
-  Cloud -.->|Cloud Peering| NetTips
-  CTF -.->|Continued Fractions| DSA
-  ImageP -.->|Matrix Tensors| ML
-  ImageP -.->|Memory Efficiency| DSA
-  DataM -.->|Analytical Warehouses| EDS
-  DataM -.->|Classification Models| ML
-  Audit -.->|Multi-Tenancy Risk| Cloud
-
-  classDef hub fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#000;
-  classDef cyber fill:#dc2626,stroke:#991b1b,stroke-width:2px,color:#fff;
-  classDef net fill:#2563eb,stroke:#1e40af,stroke-width:2px,color:#fff;
-  classDef acad fill:#059669,stroke:#065f46,stroke-width:2px,color:#fff;
-  classDef sem fill:#7c3aed,stroke:#5b21b6,stroke-width:2px,color:#fff;
-
-  class Home hub;
-  class CMOC,HWKey,WiFi,CTF,Audit cyber;
-  class NMOC,NetTips,NetQuiz,Media net;
-  class AMOC,DSA,CPU acad;
-  class Cloud,DataM,ImageP,EDS,SysAdmin,ML sem;
+mindmap
+  root((🌌 Home))
+    🛡️ Cybersecurity
+      🔑 Hardware Security Keys
+      📡 Wi-Fi Security Deauth
+      🧩 Compfest CTF Crypto
+      🔍 SkillSpector AI Audit
+    🌐 Computer Networks
+      📜 CompTIA Network+ Tips
+      🎯 CompTIA Practice Quiz
+      🔌 Transmission Media
+    🎓 Academic Coursework
+      🏛️ Semester 3
+        Data Structures and Algo
+        CPU Fetch and Architecture
+      🚀 Semester 5
+        Cloud Computing Architecture
+        Data Management and Analytics
+        Digital Image Processing
+        Enterprise Data Systems
+        Linux System Admin and Ubuntu
+        Machine Learning Foundations
 ```
 
 ---
@@ -115,6 +60,9 @@ flowchart TD
 │       ├── Machine Learning/
 │       └── System Administrator/
 ├── Attachments/
+│   ├── vault_graph.svg
+│   ├── PRAKTIKUM CHAPTER 2.pdf
+│   └── becomingahackerday11780258583150.pdf
 ├── Cybersecurity/
 │   ├── Compfest CTF Writeup - Crypto & Forensics.md
 │   ├── Cybersecurity MOC.md
@@ -128,6 +76,9 @@ flowchart TD
 │   ├── Computer Networks MOC.md
 │   └── Network Transmission Media & Cabling.md
 └── Templates/
+    ├── Academic Lecture Note.md
+    ├── Cybersecurity Audit Note.md
+    └── Networking Concept Note.md
 ```
 
 ---
