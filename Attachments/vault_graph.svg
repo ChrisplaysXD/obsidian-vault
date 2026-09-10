@@ -1,183 +1,274 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 820" width="100%" height="100%" style="background: #0d1117; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 820" width="100%" height="100%" style="background: #0d1117;">
+
+  <style>
+    @keyframes pulse-halo {
+      0%, 100% { transform: scale(1); opacity: 0.14; }
+      50% { transform: scale(1.15); opacity: 0.26; }
+    }
+    @keyframes neuron-pulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 3px currentColor); }
+      50% { transform: scale(1.18); filter: drop-shadow(0 0 10px currentColor); }
+    }
+    @keyframes synapse-flow {
+      from { stroke-dashoffset: 80; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes star-twinkle {
+      0%, 100% { opacity: 0.15; }
+      50% { opacity: 0.75; }
+    }
+    .halo { transform-origin: center; animation: pulse-halo 6s ease-in-out infinite; }
+    .synapse-base { stroke-opacity: 0.25; }
+    .synapse-pulse {
+      stroke-dasharray: 4, 18;
+      animation: synapse-flow 8s linear infinite;
+      stroke-opacity: 0.85;
+    }
+    .node-group { transform-origin: center; cursor: pointer; }
+    .star { animation: star-twinkle 4s ease-in-out infinite; }
+    text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      user-select: none;
+      pointer-events: none;
+    }
+  </style>
 
   <defs>
     <!-- Glow Filters -->
-    <filter id="glow-gold" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-    </filter>
-    <filter id="glow-red" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
-      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-    </filter>
-    <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
-      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-    </filter>
-    <filter id="glow-green" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
-      <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-    </filter>
-    <filter id="glow-purple" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
       <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
     </filter>
 
     <!-- Radial Background Nebula Halos -->
     <radialGradient id="halo-center" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.12" />
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.35" />
       <stop offset="100%" stop-color="#0d1117" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="halo-cyber" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.14" />
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.35" />
       <stop offset="100%" stop-color="#0d1117" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="halo-net" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.14" />
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.35" />
       <stop offset="100%" stop-color="#0d1117" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="halo-acad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.12" />
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.3" />
       <stop offset="100%" stop-color="#0d1117" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="halo-sem5" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#9333ea" stop-opacity="0.14" />
+      <stop offset="0%" stop-color="#9333ea" stop-opacity="0.35" />
       <stop offset="100%" stop-color="#0d1117" stop-opacity="0" />
     </radialGradient>
   </defs>
 
-  <!-- Background Ambience Halos (Galaxy Clouds) -->
-  <circle cx="500" cy="380" r="180" fill="url(#halo-center)" />
-  <circle cx="220" cy="220" r="200" fill="url(#halo-cyber)" />
-  <circle cx="780" cy="230" r="200" fill="url(#halo-net)" />
-  <circle cx="300" cy="570" r="180" fill="url(#halo-acad)" />
-  <circle cx="650" cy="630" r="220" fill="url(#halo-sem5)" />
+  <!-- Pulsing Background Nebula Halos -->
+  <g class="halo" style="animation-delay: 0s;"><circle cx="500" cy="380" r="200" fill="url(#halo-center)" /></g>
+  <g class="halo" style="animation-delay: 1.5s;"><circle cx="220" cy="220" r="220" fill="url(#halo-cyber)" /></g>
+  <g class="halo" style="animation-delay: 3s;"><circle cx="780" cy="230" r="220" fill="url(#halo-net)" /></g>
+  <g class="halo" style="animation-delay: 2s;"><circle cx="300" cy="570" r="200" fill="url(#halo-acad)" /></g>
+  <g class="halo" style="animation-delay: 4s;"><circle cx="650" cy="630" r="240" fill="url(#halo-sem5)" /></g>
 
-  <!-- Subtle Neural Grid Particles -->
-  <g opacity="0.2">
-    <circle cx="80" cy="80" r="1" fill="#fff" />
-    <circle cx="420" cy="90" r="1" fill="#fff" />
-    <circle cx="920" cy="70" r="1" fill="#fff" />
-    <circle cx="150" cy="450" r="1" fill="#fff" />
-    <circle cx="880" cy="480" r="1" fill="#fff" />
-    <circle cx="50" cy="750" r="1" fill="#fff" />
-    <circle cx="950" cy="750" r="1" fill="#fff" />
-    <circle cx="500" cy="790" r="1" fill="#fff" />
-  </g>
+  <!-- Twinkling Ambient Stars -->
+  <circle class="star" cx="80" cy="80" r="1.5" fill="#fff" style="animation-delay: 0.2s;" />
+  <circle class="star" cx="420" cy="90" r="1.2" fill="#fff" style="animation-delay: 1.5s;" />
+  <circle class="star" cx="920" cy="70" r="1.6" fill="#fff" style="animation-delay: 2.7s;" />
+  <circle class="star" cx="150" cy="450" r="1.2" fill="#fff" style="animation-delay: 0.9s;" />
+  <circle class="star" cx="880" cy="480" r="1.4" fill="#fff" style="animation-delay: 3.1s;" />
+  <circle class="star" cx="50" cy="750" r="1.5" fill="#fff" style="animation-delay: 1.8s;" />
+  <circle class="star" cx="950" cy="750" r="1.3" fill="#fff" style="animation-delay: 2.2s;" />
+  <circle class="star" cx="500" cy="790" r="1.6" fill="#fff" style="animation-delay: 0.4s;" />
 
-  <!-- Synaptic Axon Links -->
-  <g opacity="0.55">
-    <line x1="500" y1="380" x2="250" y2="220" stroke="#f87171" stroke-width="1.8" stroke-opacity="0.75" />
-    <line x1="500" y1="380" x2="750" y2="220" stroke="#38bdf8" stroke-width="1.8" stroke-opacity="0.75" />
-    <line x1="500" y1="380" x2="500" y2="550" stroke="#34d399" stroke-width="1.8" stroke-opacity="0.75" />
-    <line x1="250" y1="220" x2="120" y2="150" stroke="#ef4444" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="250" y1="220" x2="140" y2="310" stroke="#ef4444" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="250" y1="220" x2="90" y2="230" stroke="#ef4444" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="250" y1="220" x2="230" y2="110" stroke="#ef4444" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="750" y1="220" x2="860" y2="140" stroke="#0ea5e9" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="750" y1="220" x2="910" y2="240" stroke="#0ea5e9" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="750" y1="220" x2="820" y2="320" stroke="#0ea5e9" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="500" y1="550" x2="310" y2="520" stroke="#10b981" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="500" y1="550" x2="260" y2="620" stroke="#10b981" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="500" y1="550" x2="690" y2="470" stroke="#c084fc" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="500" y1="550" x2="640" y2="580" stroke="#c084fc" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="500" y1="550" x2="450" y2="690" stroke="#c084fc" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="500" y1="550" x2="750" y2="620" stroke="#a855f7" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="500" y1="550" x2="350" y2="690" stroke="#c084fc" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="500" y1="550" x2="580" y2="680" stroke="#a855f7" stroke-width="1.2" stroke-opacity="0.75" />
-    <line x1="690" y1="470" x2="790" y2="440" stroke="#a855f7" stroke-width="1.0" stroke-opacity="0.75" />
-    <line x1="350" y1="690" x2="270" y2="740" stroke="#a855f7" stroke-width="1.0" stroke-opacity="0.75" />
-    <line x1="120" y1="150" x2="350" y2="690" stroke="#e879f9" stroke-width="0.9" stroke-opacity="0.75" />
-    <line x1="120" y1="150" x2="260" y2="620" stroke="#f43f5e" stroke-width="0.9" stroke-opacity="0.75" />
-    <line x1="140" y1="310" x2="820" y2="320" stroke="#38bdf8" stroke-width="0.9" stroke-opacity="0.75" />
-    <line x1="140" y1="310" x2="860" y2="140" stroke="#fb7185" stroke-width="0.9" stroke-opacity="0.75" />
-    <line x1="90" y1="230" x2="310" y2="520" stroke="#ec4899" stroke-width="0.9" stroke-opacity="0.75" />
-    <line x1="690" y1="470" x2="860" y2="140" stroke="#818cf8" stroke-width="0.9" stroke-opacity="0.75" />
-    <line x1="450" y1="690" x2="580" y2="680" stroke="#c084fc" stroke-width="0.9" stroke-opacity="0.75" />
-    <line x1="450" y1="690" x2="310" y2="520" stroke="#34d399" stroke-width="0.9" stroke-opacity="0.75" />
-    <line x1="640" y1="580" x2="750" y2="620" stroke="#a855f7" stroke-width="0.9" stroke-opacity="0.75" />
-    <line x1="640" y1="580" x2="580" y2="680" stroke="#e879f9" stroke-width="0.9" stroke-opacity="0.75" />
-    <line x1="230" y1="110" x2="690" y2="470" stroke="#f43f5e" stroke-width="0.9" stroke-opacity="0.75" />
-  </g>
-  <!-- Neuron Nodes -->
+  <!-- Base Synapse Axons -->
   <g>
-    <circle cx="500" cy="380" r="16" fill="#fbbf24" opacity="0.2" />
-    <circle cx="500" cy="380" r="13" fill="#fbbf24" filter="url(#glow-gold)" />
-    <circle cx="500" cy="380" r="5.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="250" cy="220" r="13" fill="#f87171" opacity="0.2" />
-    <circle cx="250" cy="220" r="10" fill="#f87171" filter="url(#glow-red)" />
-    <circle cx="250" cy="220" r="4.5" fill="#ffffff" opacity="0.8" />
-    <circle cx="120" cy="150" r="9.5" fill="#ef4444" opacity="0.2" />
-    <circle cx="120" cy="150" r="6.5" fill="#ef4444" filter="url(#glow-red)" />
-    <circle cx="120" cy="150" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="140" cy="310" r="9.5" fill="#ef4444" opacity="0.2" />
-    <circle cx="140" cy="310" r="6.5" fill="#ef4444" filter="url(#glow-red)" />
-    <circle cx="140" cy="310" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="90" cy="230" r="9.5" fill="#ef4444" opacity="0.2" />
-    <circle cx="90" cy="230" r="6.5" fill="#ef4444" filter="url(#glow-red)" />
-    <circle cx="90" cy="230" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="230" cy="110" r="9.5" fill="#ef4444" opacity="0.2" />
-    <circle cx="230" cy="110" r="6.5" fill="#ef4444" filter="url(#glow-red)" />
-    <circle cx="230" cy="110" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="750" cy="220" r="13" fill="#38bdf8" opacity="0.2" />
-    <circle cx="750" cy="220" r="10" fill="#38bdf8" filter="url(#glow-blue)" />
-    <circle cx="750" cy="220" r="4.5" fill="#ffffff" opacity="0.8" />
-    <circle cx="860" cy="140" r="9.5" fill="#0ea5e9" opacity="0.2" />
-    <circle cx="860" cy="140" r="6.5" fill="#0ea5e9" filter="url(#glow-blue)" />
-    <circle cx="860" cy="140" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="910" cy="240" r="9.5" fill="#0ea5e9" opacity="0.2" />
-    <circle cx="910" cy="240" r="6.5" fill="#0ea5e9" filter="url(#glow-blue)" />
-    <circle cx="910" cy="240" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="820" cy="320" r="9.5" fill="#0ea5e9" opacity="0.2" />
-    <circle cx="820" cy="320" r="6.5" fill="#0ea5e9" filter="url(#glow-blue)" />
-    <circle cx="820" cy="320" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="500" cy="550" r="13" fill="#34d399" opacity="0.2" />
-    <circle cx="500" cy="550" r="10" fill="#34d399" filter="url(#glow-green)" />
-    <circle cx="500" cy="550" r="4.5" fill="#ffffff" opacity="0.8" />
-    <circle cx="310" cy="520" r="9.5" fill="#10b981" opacity="0.2" />
-    <circle cx="310" cy="520" r="6.5" fill="#10b981" filter="url(#glow-green)" />
-    <circle cx="310" cy="520" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="260" cy="620" r="9.5" fill="#10b981" opacity="0.2" />
-    <circle cx="260" cy="620" r="6.5" fill="#10b981" filter="url(#glow-green)" />
-    <circle cx="260" cy="620" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="690" cy="470" r="9.5" fill="#c084fc" opacity="0.2" />
-    <circle cx="690" cy="470" r="6.5" fill="#c084fc" filter="url(#glow-purple)" />
-    <circle cx="690" cy="470" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="790" cy="440" r="8.5" fill="#a855f7" opacity="0.2" />
-    <circle cx="790" cy="440" r="5.5" fill="#a855f7" filter="url(#glow-purple)" />
-    <circle cx="790" cy="440" r="2.5" fill="#ffffff" opacity="0.8" />
-    <circle cx="640" cy="580" r="9.5" fill="#c084fc" opacity="0.2" />
-    <circle cx="640" cy="580" r="6.5" fill="#c084fc" filter="url(#glow-purple)" />
-    <circle cx="640" cy="580" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="750" cy="620" r="9.5" fill="#a855f7" opacity="0.2" />
-    <circle cx="750" cy="620" r="6.5" fill="#a855f7" filter="url(#glow-purple)" />
-    <circle cx="750" cy="620" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="450" cy="690" r="9.5" fill="#c084fc" opacity="0.2" />
-    <circle cx="450" cy="690" r="6.5" fill="#c084fc" filter="url(#glow-purple)" />
-    <circle cx="450" cy="690" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="580" cy="680" r="9.5" fill="#a855f7" opacity="0.2" />
-    <circle cx="580" cy="680" r="6.5" fill="#a855f7" filter="url(#glow-purple)" />
-    <circle cx="580" cy="680" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="350" cy="690" r="9.5" fill="#c084fc" opacity="0.2" />
-    <circle cx="350" cy="690" r="6.5" fill="#c084fc" filter="url(#glow-purple)" />
-    <circle cx="350" cy="690" r="2.9" fill="#ffffff" opacity="0.8" />
-    <circle cx="270" cy="740" r="8.5" fill="#a855f7" opacity="0.2" />
-    <circle cx="270" cy="740" r="5.5" fill="#a855f7" filter="url(#glow-purple)" />
-    <circle cx="270" cy="740" r="2.5" fill="#ffffff" opacity="0.8" />
+    <line class="synapse-base" x1="500" y1="380" x2="250" y2="220" stroke="#f87171" stroke-width="2.0" />
+    <line class="synapse-base" x1="500" y1="380" x2="750" y2="220" stroke="#38bdf8" stroke-width="2.0" />
+    <line class="synapse-base" x1="500" y1="380" x2="500" y2="550" stroke="#34d399" stroke-width="2.0" />
+    <line class="synapse-base" x1="250" y1="220" x2="120" y2="150" stroke="#ef4444" stroke-width="1.3" />
+    <line class="synapse-base" x1="250" y1="220" x2="140" y2="310" stroke="#ef4444" stroke-width="1.3" />
+    <line class="synapse-base" x1="250" y1="220" x2="90" y2="230" stroke="#ef4444" stroke-width="1.3" />
+    <line class="synapse-base" x1="250" y1="220" x2="230" y2="110" stroke="#ef4444" stroke-width="1.3" />
+    <line class="synapse-base" x1="750" y1="220" x2="860" y2="140" stroke="#0ea5e9" stroke-width="1.3" />
+    <line class="synapse-base" x1="750" y1="220" x2="910" y2="240" stroke="#0ea5e9" stroke-width="1.3" />
+    <line class="synapse-base" x1="750" y1="220" x2="820" y2="320" stroke="#0ea5e9" stroke-width="1.3" />
+    <line class="synapse-base" x1="500" y1="550" x2="310" y2="520" stroke="#10b981" stroke-width="1.3" />
+    <line class="synapse-base" x1="500" y1="550" x2="260" y2="620" stroke="#10b981" stroke-width="1.3" />
+    <line class="synapse-base" x1="500" y1="550" x2="690" y2="470" stroke="#c084fc" stroke-width="1.3" />
+    <line class="synapse-base" x1="500" y1="550" x2="640" y2="580" stroke="#c084fc" stroke-width="1.3" />
+    <line class="synapse-base" x1="500" y1="550" x2="450" y2="690" stroke="#c084fc" stroke-width="1.3" />
+    <line class="synapse-base" x1="500" y1="550" x2="750" y2="620" stroke="#a855f7" stroke-width="1.3" />
+    <line class="synapse-base" x1="500" y1="550" x2="350" y2="690" stroke="#c084fc" stroke-width="1.3" />
+    <line class="synapse-base" x1="500" y1="550" x2="580" y2="680" stroke="#a855f7" stroke-width="1.3" />
+    <line class="synapse-base" x1="690" y1="470" x2="790" y2="440" stroke="#a855f7" stroke-width="1.1" />
+    <line class="synapse-base" x1="350" y1="690" x2="270" y2="740" stroke="#a855f7" stroke-width="1.1" />
+    <line class="synapse-base" x1="120" y1="150" x2="350" y2="690" stroke="#e879f9" stroke-width="1.0" />
+    <line class="synapse-base" x1="120" y1="150" x2="260" y2="620" stroke="#f43f5e" stroke-width="1.0" />
+    <line class="synapse-base" x1="140" y1="310" x2="820" y2="320" stroke="#38bdf8" stroke-width="1.0" />
+    <line class="synapse-base" x1="140" y1="310" x2="860" y2="140" stroke="#fb7185" stroke-width="1.0" />
+    <line class="synapse-base" x1="90" y1="230" x2="310" y2="520" stroke="#ec4899" stroke-width="1.0" />
+    <line class="synapse-base" x1="690" y1="470" x2="860" y2="140" stroke="#818cf8" stroke-width="1.0" />
+    <line class="synapse-base" x1="450" y1="690" x2="580" y2="680" stroke="#c084fc" stroke-width="1.0" />
+    <line class="synapse-base" x1="450" y1="690" x2="310" y2="520" stroke="#34d399" stroke-width="1.0" />
+    <line class="synapse-base" x1="640" y1="580" x2="750" y2="620" stroke="#a855f7" stroke-width="1.0" />
+    <line class="synapse-base" x1="640" y1="580" x2="580" y2="680" stroke="#e879f9" stroke-width="1.0" />
+    <line class="synapse-base" x1="230" y1="110" x2="690" y2="470" stroke="#f43f5e" stroke-width="1.0" />
   </g>
-  <!-- Synaptic Labels -->
+  <!-- Active Synaptic Action Potentials -->
+  <g>
+    <line class="synapse-pulse" style="animation-duration: 15s;" x1="500" y1="380" x2="250" y2="220" stroke="#f87171" stroke-width="2.6" />
+    <line class="synapse-pulse" style="animation-duration: 15s;" x1="500" y1="380" x2="750" y2="220" stroke="#38bdf8" stroke-width="2.6" />
+    <line class="synapse-pulse" style="animation-duration: 15s;" x1="500" y1="380" x2="500" y2="550" stroke="#34d399" stroke-width="2.6" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="250" y1="220" x2="120" y2="150" stroke="#ef4444" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="250" y1="220" x2="140" y2="310" stroke="#ef4444" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="250" y1="220" x2="90" y2="230" stroke="#ef4444" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="250" y1="220" x2="230" y2="110" stroke="#ef4444" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="750" y1="220" x2="860" y2="140" stroke="#0ea5e9" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="750" y1="220" x2="910" y2="240" stroke="#0ea5e9" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="750" y1="220" x2="820" y2="320" stroke="#0ea5e9" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="500" y1="550" x2="310" y2="520" stroke="#10b981" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="500" y1="550" x2="260" y2="620" stroke="#10b981" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="500" y1="550" x2="690" y2="470" stroke="#c084fc" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="500" y1="550" x2="640" y2="580" stroke="#c084fc" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="500" y1="550" x2="450" y2="690" stroke="#c084fc" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="500" y1="550" x2="750" y2="620" stroke="#a855f7" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="500" y1="550" x2="350" y2="690" stroke="#c084fc" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 20s;" x1="500" y1="550" x2="580" y2="680" stroke="#a855f7" stroke-width="1.9" />
+    <line class="synapse-pulse" style="animation-duration: 25s;" x1="690" y1="470" x2="790" y2="440" stroke="#a855f7" stroke-width="1.7000000000000002" />
+    <line class="synapse-pulse" style="animation-duration: 25s;" x1="350" y1="690" x2="270" y2="740" stroke="#a855f7" stroke-width="1.7000000000000002" />
+    <line class="synapse-pulse" style="animation-duration: 30s;" x1="120" y1="150" x2="350" y2="690" stroke="#e879f9" stroke-width="1.6" />
+    <line class="synapse-pulse" style="animation-duration: 30s;" x1="120" y1="150" x2="260" y2="620" stroke="#f43f5e" stroke-width="1.6" />
+    <line class="synapse-pulse" style="animation-duration: 30s;" x1="140" y1="310" x2="820" y2="320" stroke="#38bdf8" stroke-width="1.6" />
+    <line class="synapse-pulse" style="animation-duration: 30s;" x1="140" y1="310" x2="860" y2="140" stroke="#fb7185" stroke-width="1.6" />
+    <line class="synapse-pulse" style="animation-duration: 30s;" x1="90" y1="230" x2="310" y2="520" stroke="#ec4899" stroke-width="1.6" />
+    <line class="synapse-pulse" style="animation-duration: 30s;" x1="690" y1="470" x2="860" y2="140" stroke="#818cf8" stroke-width="1.6" />
+    <line class="synapse-pulse" style="animation-duration: 30s;" x1="450" y1="690" x2="580" y2="680" stroke="#c084fc" stroke-width="1.6" />
+    <line class="synapse-pulse" style="animation-duration: 30s;" x1="450" y1="690" x2="310" y2="520" stroke="#34d399" stroke-width="1.6" />
+    <line class="synapse-pulse" style="animation-duration: 30s;" x1="640" y1="580" x2="750" y2="620" stroke="#a855f7" stroke-width="1.6" />
+    <line class="synapse-pulse" style="animation-duration: 30s;" x1="640" y1="580" x2="580" y2="680" stroke="#e879f9" stroke-width="1.6" />
+    <line class="synapse-pulse" style="animation-duration: 30s;" x1="230" y1="110" x2="690" y2="470" stroke="#f43f5e" stroke-width="1.6" />
+  </g>
+  <!-- Firing Neuron Cell Bodies -->
+  <g>
+  <g class="node-group" style="animation: neuron-pulse 3.5s ease-in-out infinite; animation-delay: 0.0s; color: #fbbf24; transform-origin: 500px 380px;">
+    <circle cx="500" cy="380" r="18" fill="#fbbf24" opacity="0.2" />
+    <circle cx="500" cy="380" r="14" fill="#fbbf24" filter="url(#glow)" />
+    <circle cx="500" cy="380" r="6.3" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 4.2s ease-in-out infinite; animation-delay: 0.4s; color: #f87171; transform-origin: 250px 220px;">
+    <circle cx="250" cy="220" r="14.5" fill="#f87171" opacity="0.2" />
+    <circle cx="250" cy="220" r="10.5" fill="#f87171" filter="url(#glow)" />
+    <circle cx="250" cy="220" r="4.7" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 1.1s; color: #ef4444; transform-origin: 120px 150px;">
+    <circle cx="120" cy="150" r="10.5" fill="#ef4444" opacity="0.2" />
+    <circle cx="120" cy="150" r="6.5" fill="#ef4444" filter="url(#glow)" />
+    <circle cx="120" cy="150" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 1.6s; color: #ef4444; transform-origin: 140px 310px;">
+    <circle cx="140" cy="310" r="10.5" fill="#ef4444" opacity="0.2" />
+    <circle cx="140" cy="310" r="6.5" fill="#ef4444" filter="url(#glow)" />
+    <circle cx="140" cy="310" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 0.8s; color: #ef4444; transform-origin: 90px 230px;">
+    <circle cx="90" cy="230" r="10.5" fill="#ef4444" opacity="0.2" />
+    <circle cx="90" cy="230" r="6.5" fill="#ef4444" filter="url(#glow)" />
+    <circle cx="90" cy="230" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 1.4s; color: #ef4444; transform-origin: 230px 110px;">
+    <circle cx="230" cy="110" r="10.5" fill="#ef4444" opacity="0.2" />
+    <circle cx="230" cy="110" r="6.5" fill="#ef4444" filter="url(#glow)" />
+    <circle cx="230" cy="110" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 4.2s ease-in-out infinite; animation-delay: 0.6s; color: #38bdf8; transform-origin: 750px 220px;">
+    <circle cx="750" cy="220" r="14.5" fill="#38bdf8" opacity="0.2" />
+    <circle cx="750" cy="220" r="10.5" fill="#38bdf8" filter="url(#glow)" />
+    <circle cx="750" cy="220" r="4.7" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 1.2s; color: #0ea5e9; transform-origin: 860px 140px;">
+    <circle cx="860" cy="140" r="10.5" fill="#0ea5e9" opacity="0.2" />
+    <circle cx="860" cy="140" r="6.5" fill="#0ea5e9" filter="url(#glow)" />
+    <circle cx="860" cy="140" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 1.8s; color: #0ea5e9; transform-origin: 910px 240px;">
+    <circle cx="910" cy="240" r="10.5" fill="#0ea5e9" opacity="0.2" />
+    <circle cx="910" cy="240" r="6.5" fill="#0ea5e9" filter="url(#glow)" />
+    <circle cx="910" cy="240" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 0.9s; color: #0ea5e9; transform-origin: 820px 320px;">
+    <circle cx="820" cy="320" r="10.5" fill="#0ea5e9" opacity="0.2" />
+    <circle cx="820" cy="320" r="6.5" fill="#0ea5e9" filter="url(#glow)" />
+    <circle cx="820" cy="320" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 4.2s ease-in-out infinite; animation-delay: 0.5s; color: #34d399; transform-origin: 500px 550px;">
+    <circle cx="500" cy="550" r="14.5" fill="#34d399" opacity="0.2" />
+    <circle cx="500" cy="550" r="10.5" fill="#34d399" filter="url(#glow)" />
+    <circle cx="500" cy="550" r="4.7" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 1.3s; color: #10b981; transform-origin: 310px 520px;">
+    <circle cx="310" cy="520" r="10.5" fill="#10b981" opacity="0.2" />
+    <circle cx="310" cy="520" r="6.5" fill="#10b981" filter="url(#glow)" />
+    <circle cx="310" cy="520" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 1.7s; color: #10b981; transform-origin: 260px 620px;">
+    <circle cx="260" cy="620" r="10.5" fill="#10b981" opacity="0.2" />
+    <circle cx="260" cy="620" r="6.5" fill="#10b981" filter="url(#glow)" />
+    <circle cx="260" cy="620" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 1.0s; color: #c084fc; transform-origin: 690px 470px;">
+    <circle cx="690" cy="470" r="10.5" fill="#c084fc" opacity="0.2" />
+    <circle cx="690" cy="470" r="6.5" fill="#c084fc" filter="url(#glow)" />
+    <circle cx="690" cy="470" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 1.5s; color: #a855f7; transform-origin: 790px 440px;">
+    <circle cx="790" cy="440" r="9.5" fill="#a855f7" opacity="0.2" />
+    <circle cx="790" cy="440" r="5.5" fill="#a855f7" filter="url(#glow)" />
+    <circle cx="790" cy="440" r="2.5" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 0.7s; color: #c084fc; transform-origin: 640px 580px;">
+    <circle cx="640" cy="580" r="10.5" fill="#c084fc" opacity="0.2" />
+    <circle cx="640" cy="580" r="6.5" fill="#c084fc" filter="url(#glow)" />
+    <circle cx="640" cy="580" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 1.4s; color: #a855f7; transform-origin: 750px 620px;">
+    <circle cx="750" cy="620" r="10.5" fill="#a855f7" opacity="0.2" />
+    <circle cx="750" cy="620" r="6.5" fill="#a855f7" filter="url(#glow)" />
+    <circle cx="750" cy="620" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 1.9s; color: #c084fc; transform-origin: 450px 690px;">
+    <circle cx="450" cy="690" r="10.5" fill="#c084fc" opacity="0.2" />
+    <circle cx="450" cy="690" r="6.5" fill="#c084fc" filter="url(#glow)" />
+    <circle cx="450" cy="690" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 1.1s; color: #a855f7; transform-origin: 580px 680px;">
+    <circle cx="580" cy="680" r="10.5" fill="#a855f7" opacity="0.2" />
+    <circle cx="580" cy="680" r="6.5" fill="#a855f7" filter="url(#glow)" />
+    <circle cx="580" cy="680" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 0.8s; color: #c084fc; transform-origin: 350px 690px;">
+    <circle cx="350" cy="690" r="10.5" fill="#c084fc" opacity="0.2" />
+    <circle cx="350" cy="690" r="6.5" fill="#c084fc" filter="url(#glow)" />
+    <circle cx="350" cy="690" r="2.9" fill="#ffffff" opacity="0.85" />
+  </g>
+  <g class="node-group" style="animation: neuron-pulse 5.0s ease-in-out infinite; animation-delay: 1.5s; color: #a855f7; transform-origin: 270px 740px;">
+    <circle cx="270" cy="740" r="9.5" fill="#a855f7" opacity="0.2" />
+    <circle cx="270" cy="740" r="5.5" fill="#a855f7" filter="url(#glow)" />
+    <circle cx="270" cy="740" r="2.5" fill="#ffffff" opacity="0.85" />
+  </g>
+  </g>
+  <!-- Synaptic Node Labels -->
   <g font-size="11" font-weight="500" fill="#e6edf3" text-shadow="0 1px 4px #000">
-    <text x="500" y="358" text-anchor="middle" font-size="14" font-weight="bold" fill="#fbbf24">Home</text>
-    <text x="250" y="202" text-anchor="middle" font-size="12" font-weight="bold" fill="#f87171">Cybersecurity MOC</text>
+    <text x="500" y="356" text-anchor="middle" font-size="14" font-weight="bold" fill="#fbbf24">Home</text>
+    <text x="250" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#f87171">Cybersecurity MOC</text>
     <text x="108" y="154" text-anchor="end" fill="#cbd5e1" opacity="0.95">Hardware Security Keys</text>
     <text x="128" y="314" text-anchor="end" fill="#cbd5e1" opacity="0.95">Wi-Fi Security (Deauth)</text>
     <text x="78" y="234" text-anchor="end" fill="#cbd5e1" opacity="0.95">Compfest CTF (Crypto)</text>
     <text x="218" y="114" text-anchor="end" fill="#cbd5e1" opacity="0.95">SkillSpector AI Audit</text>
-    <text x="750" y="202" text-anchor="middle" font-size="12" font-weight="bold" fill="#38bdf8">Computer Networks MOC</text>
+    <text x="750" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#38bdf8">Computer Networks MOC</text>
     <text x="872" y="144" text-anchor="start" fill="#cbd5e1" opacity="0.95">CompTIA Network+ Tips</text>
     <text x="922" y="244" text-anchor="start" fill="#cbd5e1" opacity="0.95">CompTIA Practice Quiz</text>
     <text x="832" y="324" text-anchor="start" fill="#cbd5e1" opacity="0.95">Cabling & Transmission</text>
-    <text x="500" y="574" text-anchor="middle" font-size="12" font-weight="bold" fill="#34d399">Academic MOC</text>
+    <text x="500" y="576" text-anchor="middle" font-size="12" font-weight="bold" fill="#34d399">Academic MOC</text>
     <text x="298" y="524" text-anchor="end" fill="#cbd5e1" opacity="0.95">Data Structures & Algo</text>
     <text x="248" y="624" text-anchor="end" fill="#cbd5e1" opacity="0.95">Computer Architecture & CPU</text>
     <text x="702" y="474" text-anchor="start" fill="#cbd5e1" opacity="0.95">Cloud Architecture</text>
