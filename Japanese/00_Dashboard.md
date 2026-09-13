@@ -32,6 +32,7 @@ banner: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=120
 - 🔄 [[TMW_Beginner_Loop|The Moe Way Study Loop & Milestones]]
 - 🎯 [[JLPT_N5_Roadmap|JLPT N5 Core Grammar & Vocab Checklist]]
 - 🚆 [[Travel_Phrases_Index|Survival Japanese for Travel & Daily Life]]
+- 📋 [[Weekly_Kanban_Schedule|Interactive Weekly Study Kanban (Drag-and-Drop)]]
 
 ---
 

@@ -11,5 +11,9 @@
   "obsidian-mind-map",
   "omnisearch",
   "quickadd",
-  "templater-obsidian"
+  "templater-obsidian",
+  "calendar",
+  "obsidian-kanban",
+  "obsidian-projects",
+  "obsidian-style-settings"
 ]
