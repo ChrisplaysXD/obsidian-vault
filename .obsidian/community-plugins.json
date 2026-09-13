@@ -13,5 +13,9 @@
   "quickadd",
   "templater-obsidian",
   "obsidian-kanban",
-  "calendar"
+  "calendar",
+  "grimoire",
+  "remotely-save",
+  "obsidian-style-settings",
+  "obsidian-projects"
 ]
