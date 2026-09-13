@@ -1,5 +1,8 @@
 {
   "accentColor": "#1bbb1d",
   "cssTheme": "Border",
-  "nativeMenus": true
+  "nativeMenus": true,
+  "enabledCssSnippets": [
+    "notion-cards"
+  ]
 }
