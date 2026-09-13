@@ -48,3 +48,7 @@ graph LR
 - [ ] Open Deck Options -> set **Maximum reviews/day** to `9999` (uncapped).
 - [ ] Set **New cards/day** to `10` (sustainable for busy days; raise to 15-20 on weekends).
 - [ ] Delete or suspend the introductory instruction card.
+
+---
+> [!NAV] Up
+> [[Japanese Language MOC|🗺️ Japanese Language MOC]] ⸱ [[00_Dashboard|🎌 Japanese Dashboard]]

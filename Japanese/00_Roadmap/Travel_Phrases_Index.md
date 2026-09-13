@@ -43,3 +43,7 @@
 | 英語が話せますか？ | えいごがはなせますか？ | Do you speak English? |
 | 日本語が少ししか話せません | にほんごがすこししかはなせません | I only speak a little Japanese |
 | 助けてください | たすけてください | Please help me |
+
+---
+> [!NAV] Up
+> [[Japanese Language MOC|🗺️ Japanese Language MOC]] ⸱ [[00_Dashboard|🎌 Japanese Dashboard]]

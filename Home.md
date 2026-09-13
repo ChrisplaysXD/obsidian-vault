@@ -22,7 +22,7 @@ Welcome to your central personal vault. All notes are indexed into cohesive topi
 | **🛡️ Cybersecurity** | Penetration testing, wireless attacks, cryptography, FIDO2 hardware tokens, and security audits. | [[Cybersecurity MOC]] |
 | **🌐 Networking** | CompTIA Network+ certification prep, physical cabling standards, routing protocols, and cloud WANs. | [[Computer Networks MOC]] |
 | **🎓 Academics** | University curriculum spanning foundational computer science (Semester 3) and specialized engineering tracks (Semester 5). | [[Academic MOC]] |
-| **🎌 Japanese** | Conversational fluency, The Moe Way immersion tracking, JLPT N5-N3 benchmarks, and Renshuu/Anki sync. | [[Japanese/00_Dashboard\|Japanese Hub]] |
+| **🎌 Japanese** | Conversational fluency, The Moe Way immersion tracking, JLPT N5-N3 benchmarks, and Renshuu/Anki sync. | [[Japanese Language MOC]] |
 
 ---
 
@@ -75,3 +75,4 @@ LIMIT 12
 - `#cryptography` — [[Compfest CTF Writeup - Crypto & Forensics]]
 - `#sysadmin` — [[Linux System Administration & Automation]]
 - `#machinelearning` — [[Machine Learning Foundations & Supervised Learning]]
+- `#japanese` — [[Japanese Language MOC]]

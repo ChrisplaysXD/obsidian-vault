@@ -29,3 +29,7 @@ added_date: 2026-09-13
 - 私はクリスです。 (As for me, I am Chris.)
 - だれ**が**来ましたか？ (WHO was it that came?)
 - 田中さん**が**来ました。 (It was Tanaka who came.)
+
+---
+> [!NAV] Up
+> [[Japanese Language MOC|🗺️ Japanese Language MOC]] ⸱ [[00_Dashboard|🎌 Japanese Dashboard]]

@@ -30,3 +30,7 @@
 - [ ] Nihongo con Teppei for Beginners: 50 episodes completed with Level 1/2 comprehension
 - [ ] Comprehensible Japanese Complete Beginner playlist completed
 - [ ] Able to shadow natural 3-sentence travel interactions without hesitation
+
+---
+> [!NAV] Up
+> [[Japanese Language MOC|🗺️ Japanese Language MOC]] ⸱ [[00_Dashboard|🎌 Japanese Dashboard]]

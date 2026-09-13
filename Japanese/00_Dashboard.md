@@ -1,5 +1,8 @@
 # 🎌 Japanese Learning Space
 
+> [!NAV] Navigation
+> [[Home|🏠 Central Knowledge Base]] ⸱ [[Japanese Language MOC|🗺️ Japanese Language MOC]]
+
 > [!TIP] The Moe Way Focus & Ratio Rule
 > **Target Ratio**: 70% Listening / Immersion ⸱ 30% Grammar & Reading  
 > **Daily Micro-Goal**: 10 new Anki cards (Kaishi 1.5k), keep Renshuu streak alive, 15m audio shadowing.

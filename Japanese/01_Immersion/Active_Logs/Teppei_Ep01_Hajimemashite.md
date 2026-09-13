@@ -36,3 +36,7 @@ mined_words: ["[[今日]]", "[[天気]]"]
 ## ⛏️ 1T Mined Candidates
 - [[今日]] (きょう - today)
 - [[天気]] (てんき - weather)
+
+---
+> [!NAV] Up
+> [[Japanese Language MOC|🗺️ Japanese Language MOC]] ⸱ [[00_Dashboard|🎌 Japanese Dashboard]]

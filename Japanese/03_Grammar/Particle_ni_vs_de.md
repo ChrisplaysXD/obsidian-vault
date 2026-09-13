@@ -22,3 +22,7 @@ added_date: 2026-09-13
 - レストラン**で**[[食べる|食べます]]。 (I eat AT the restaurant.) -> Active verb `食べる` takes `で`.
 - レストラン**に**行きます。 (I go TO the restaurant.) -> Destination takes `に`.
 - レストラン**に**猫がいます。 (There is a cat AT/IN the restaurant.) -> Existence verb `いる` takes `に`.
+
+---
+> [!NAV] Up
+> [[Japanese Language MOC|🗺️ Japanese Language MOC]] ⸱ [[00_Dashboard|🎌 Japanese Dashboard]]

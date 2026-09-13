@@ -62,3 +62,7 @@
 > [!WARNING] Look-Alike Warning
 > - **シ** (shi) vs **ツ** (tsu): シ strokes are horizontal/upwards; ツ strokes are vertical/downwards.
 > - **ソ** (so) vs **ン** (n): ソ starts from the top; ン sweeps up from the bottom.
+
+---
+> [!NAV] Up
+> [[Japanese Language MOC|🗺️ Japanese Language MOC]] ⸱ [[00_Dashboard|🎌 Japanese Dashboard]]

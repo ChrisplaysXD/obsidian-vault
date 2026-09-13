@@ -29,3 +29,7 @@ added_date: 2026-09-13
 ### 📖 Examples
 - 日本に行き**たい**です。 (I want to go to Japan.)
 - ラーメンを[[食べる|食べたい]]です。 (I want to eat ramen.)
+
+---
+> [!NAV] Up
+> [[Japanese Language MOC|🗺️ Japanese Language MOC]] ⸱ [[00_Dashboard|🎌 Japanese Dashboard]]
