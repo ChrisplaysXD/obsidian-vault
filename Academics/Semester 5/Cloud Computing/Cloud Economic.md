@@ -29,8 +29,13 @@ when it comes to cloud its normal to make a price comparison between the current
 ---
 
 ## 3. Key Takeaways & Review Questions
-- 
-- Core takeaway 2
+- there are 3 pricing model for cloud service
+	- compute(pay per hour or second)
+	- storage(pay per GB used)
+	- Data transfer(Charged for each data transmission spent per GB)
+- there are 3 way to pay for the service in AWS
+	- pay for what you use
+		
 
 ---
 
