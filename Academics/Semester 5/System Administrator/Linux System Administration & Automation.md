@@ -41,7 +41,7 @@ journalctl -u <unit>.service -f --since "1 hour ago"
 
 ### Writing a Custom Systemd Service Unit
 ```ini
-[Unit]
+[Unit]#
 Description=Custom Background Task Daemon
 After=network.target
 
@@ -55,6 +55,7 @@ RestartSec=5s
 [Install]
 WantedBy=multi-user.target
 ```
+
 
 ---
 
