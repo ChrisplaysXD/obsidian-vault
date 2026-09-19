@@ -76,3 +76,8 @@ LIMIT 12
 - `#sysadmin` — [[Linux System Administration & Automation]]
 - `#machinelearning` — [[Machine Learning Foundations & Supervised Learning]]
 - `#japanese` — [[Japanese Language MOC]]
+- `#memory` — [[Memory/Graph Connection]]
+- `#mistakes` — [[Memory/Mistakes]]
+- `#living` — [[Memory/Living]]
+- `#daily` — [[Memory/Daily]]
+- `#archive` — [[Memory/Archive]]

@@ -1,13 +1,17 @@
-.graph-view .node {
-  --node-fill: #e0f7fa;
-  --node-border: #00796b;
+.graph-view .node > circle,
+.graph-view .node > path,
+.graph-view .node > ellipse {
+  fill-opacity: 1;
 }
-.graph-view .node[href$="Memory/Living"] {
-  fill: #81c784;
-}
-.graph-view .node[href$="Memory/Daily"] {
-  fill: #fff176;
-}
-.graph-view .node[href$="Memory/Archive"] {
-  fill: #b0bec5;
-}
+/* Memory tiers */
+.graph-view .node[href*="Memory/Living"] > circle { fill: #81c784 !important; }
+.graph-view .node[href*="Memory/Daily"] > circle { fill: #fff176 !important; }
+.graph-view .node[href*="Memory/Archive"] > circle { fill: #b0bec5 !important; }
+/* Domain clusters (level 1) */
+.graph-view .node[href*="Cybersecurity/"] > circle { fill: #ef5350 !important; }
+.graph-view .node[href*="Networking/"] > circle { fill: #42a5f5 !important; }
+.graph-view .node[href*="Academics/"] > circle { fill: #ab47bc !important; }
+.graph-view .node[href*="Japanese/"] > circle { fill: #ffa726 !important; }
+.graph-view .node[href*="Memory/"] > circle { fill: #66bb6a !important; }
+/* Root/home */
+.graph-view .node[href*="Home.md"] > circle { fill: #ffd54f !important; stroke-width: 2px; }
