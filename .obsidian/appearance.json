@@ -3,6 +3,7 @@
   "cssTheme": "Border",
   "nativeMenus": true,
   "enabledCssSnippets": [
-    "notion-cards"
+    "notion-cards",
+    "graph-colors"
   ]
 }

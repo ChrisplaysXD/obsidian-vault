@@ -2,5 +2,49 @@
   "showLineNumber": true,
   "readableLineLength": false,
   "promptDelete": false,
-  "attachmentFolderPath": "Attachments"
+  "attachmentFolderPath": "Attachments",
+  "graphView": {
+    "groups": [
+      {
+        "name": "Memory/Living",
+        "color": "#81c784",
+        "query": "path:Memory/Living"
+      },
+      {
+        "name": "Memory/Daily",
+        "color": "#fff176",
+        "query": "path:Memory/Daily"
+      },
+      {
+        "name": "Memory/Archive",
+        "color": "#b0bec5",
+        "query": "path:Memory/Archive"
+      },
+      {
+        "name": "Cybersecurity",
+        "color": "#ef5350",
+        "query": "path:Cybersecurity"
+      },
+      {
+        "name": "Networking",
+        "color": "#42a5f5",
+        "query": "path:Networking"
+      },
+      {
+        "name": "Academics",
+        "color": "#ab47bc",
+        "query": "path:Academics"
+      },
+      {
+        "name": "Japanese",
+        "color": "#ffa726",
+        "query": "path:Japanese"
+      },
+      {
+        "name": "Home",
+        "color": "#ffd54f",
+        "query": "path:Home.md"
+      }
+    ]
+  }
 }
