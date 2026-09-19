@@ -15,3 +15,6 @@ Future fix reference format: "This prevented XYZ, as documented in MISTAKES.md."
 
 ---
 RULE: Record every mistake/failure with root cause + prevention reference. Format: 'This prevented XYZ, as documented in MISTAKES.md.'
+
+---
+GRAPH CONNECTION: See [[Attachments/vault_graph.svg]] for vault node/edge visualization. Memory folders (Living/Daily/Archive) link to main vault graph.

@@ -1,0 +1,13 @@
+.graph-view .node {
+  --node-fill: #e0f7fa;
+  --node-border: #00796b;
+}
+.graph-view .node[href$="Memory/Living"] {
+  fill: #81c784;
+}
+.graph-view .node[href$="Memory/Daily"] {
+  fill: #fff176;
+}
+.graph-view .node[href$="Memory/Archive"] {
+  fill: #b0bec5;
+}
