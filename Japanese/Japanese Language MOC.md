@@ -73,3 +73,8 @@ Kanji linked dynamically from acquired vocabulary words rather than studied in i
 
 ## 🏷️ Domain Tags
 - `#japanese` ⸱ `#immersion` ⸱ `#shadowing` ⸱ `#renshuu` ⸱ `#anki` ⸱ `#jlpt-n5` ⸱ `#grammar` ⸱ `#kanji`
+
+---
+
+## 🧭 Navigation
+- Return to: [[Home]]

@@ -7,4 +7,4 @@ This note links the memory system to the vault graph:
 - [[Archive]] → historical nodes
 - See full graph: [[Attachments/vault_graph.svg]]
 - See [[Mistakes]] for failure documentation and prevention references.
-- Linked from [[Home]] (dashboard hub).
+- Up: [[Memory]]

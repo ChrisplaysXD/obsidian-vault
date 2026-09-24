@@ -9,7 +9,7 @@ banner: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=120
 # 🎌 Japanese Learning Space
 
 > [!NAV] Navigation
-> [[Home|🏠 Central Knowledge Base]] ⸱ [[Japanese Language MOC|🗺️ Japanese Language MOC]]
+> [[Japanese Language MOC|🗺️ Japanese Language MOC]]
 
 > [!TIP] The Moe Way Focus & Ratio Rule
 > **Target Ratio**: 70% Listening / Immersion ⸱ 30% Grammar & Reading  

@@ -19,6 +19,7 @@ Active, stable session notes, ongoing environment configurations, and live knowl
 
 ## 📄 Active Notes
 %% Begin Waypoint %%
+- [[Serpantinum Architecture & Modifications]]
 - [[Session Note - 2026-09-19]]
 - [[Session Note - 2026-09-25]]
 %% End Waypoint %%

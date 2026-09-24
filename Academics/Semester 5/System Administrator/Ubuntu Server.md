@@ -66,4 +66,3 @@ when it comes to linux theres usually 2 type of them a desktop and server versio
 
 ## Related Notes
 - [[Academic MOC]]
-- [[Home]]

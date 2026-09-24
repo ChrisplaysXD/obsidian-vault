@@ -5,6 +5,7 @@ tags:
   - cybersecurity
   - audit
   - penetration-testing
+parent: "[[Cybersecurity MOC]]"
 aliases: []
 type: note
 status: active
@@ -36,4 +37,3 @@ Recommended patches, firewall rules, or protocol migration steps to eliminate th
 
 ## Related Notes
 - [[Cybersecurity MOC]]
-- [[Home]]

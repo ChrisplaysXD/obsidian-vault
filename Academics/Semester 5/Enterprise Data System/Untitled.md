@@ -37,4 +37,3 @@ Detail the fundamental equations, algorithms, or operational models discussed in
 
 ## Related Notes
 - [[Academic MOC]]
-- [[Home]]

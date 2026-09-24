@@ -5,6 +5,7 @@ tags:
   - networking
   - comptia
   - protocols
+parent: "[[Computer Networks MOC]]"
 aliases: []
 type: concept
 status: active
@@ -37,4 +38,3 @@ High-yield pitfalls and troubleshooting rules.
 
 ## Related Notes
 - [[Computer Networks MOC]]
-- [[Home]]

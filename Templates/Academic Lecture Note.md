@@ -5,6 +5,7 @@ tags:
   - academic
   - semester-5
   - subject-tag
+parent: "[[Academic MOC]]"
 aliases: []
 type: lecture-note
 status: active
@@ -37,4 +38,3 @@ Detail the fundamental equations, algorithms, or operational models discussed in
 
 ## Related Notes
 - [[Academic MOC]]
-- [[Home]]

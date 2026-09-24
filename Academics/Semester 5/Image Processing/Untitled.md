@@ -37,4 +37,3 @@ status: active
 
 ## Related Notes
 - [[Academic MOC]]
-- [[Home]]
