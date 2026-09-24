@@ -64,6 +64,126 @@ Serpantinum operates as the desktop shell environment on top of Hyprland and Cac
 
 ---
 
+## Complete Widget & Component Catalog
+
+The visual shell in Serpantinum divides its interface elements across bar containers, floating desktop canvases, popouts, and transient overlays. Every visual module is implemented in QML under `~/.local/share/serpantinum/src/quickshell/`.
+
+### 1. Bar Modules (`bar/modules/`)
+Horizontal top bar controls located at `~/.local/share/serpantinum/src/quickshell/bar/modules/`:
+- **Media & Audio**:
+  - `MediaWidget.qml`: Playback controls, title/artist display, dynamic pill formatting.
+  - `VisWidget.qml`: 16-bar audio spectrum visualizer interpolated with Matugen palette colors.
+- **Status & Navigation**:
+  - `FocusWidget.qml`: Active window title and process tracking.
+  - `InfoWidget.qml`: General status info pill.
+  - `LeftWidget.qml`: Left bar anchor container.
+  - `TrayWidget.qml`: System tray icon host and status notifier item embedder.
+  - `WeatherWidget.qml`: Current weather status and temperature badge.
+- **Hardware & System Status (`bar/modules/system/`)**:
+  - `BatWidget.qml`: Battery state of charge and power profile.
+  - `BtWidget.qml`: Bluetooth device pairing and RF status.
+  - `KbWidget.qml`: Keyboard layout indicator and switch trigger.
+  - `SysMonWidget.qml`: Aggregated CPU, memory, and thermal status pill.
+  - `VolWidget.qml`: PipeWire / WirePlumber audio volume and mute state.
+  - `WifiWidget.qml`: Wireless connection state and SSID indicator.
+- **Time & Date (`bar/modules/timedate/`)**:
+  - `TimeDateWidget.qml`: Time/date container supporting interchangeable faces:
+    - `faces/BadgeFace.qml`: Compact pill badge display.
+    - `faces/ClassicFace.qml`: Traditional digital clock and date readout.
+    - `faces/MaterialFace.qml`: Material-inspired multi-tier clock presentation.
+- **Workspaces (`bar/modules/workspaces/`)**:
+  - `WorkspacesWidget.qml`: Hyprland workspace switcher with dynamic visual modes:
+    - `faces/NumbersFace.qml`: Numeric index workspace badges.
+    - `faces/PacmanFace.qml`: Pacman-styled animated workspace indicators.
+    - `faces/PillsFace.qml`: Pill-shaped active/inactive workspace capsules.
+
+### 2. Sidebar Modules (`bar/sidemodules/`)
+Vertical sidebar equivalents located at `~/.local/share/serpantinum/src/quickshell/bar/sidemodules/`:
+- `SideBar.qml`: Master vertical shell panel layout.
+- `SideMediaWidget.qml`: Vertical media player widget.
+- `SideVisWidget.qml`: Vertical 16-bar audio visualizer with dynamic color syncing.
+- `SideFocusWidget.qml`: Vertical active window focus badge.
+- `SideInfoWidget.qml`: Vertical system info indicator.
+- `SideTopWidget.qml`: Sidebar header container.
+- `SideTrayWidget.qml`: Vertical system tray.
+- `SideWeatherWidget.qml`: Vertical weather indicator.
+- **System Submodules (`bar/sidemodules/system/`)**:
+  - `SideBatWidget.qml`, `SideBtWidget.qml`, `SideKbWidget.qml`, `SideSysMonWidget.qml`, `SideVolWidget.qml`, `SideWifiWidget.qml`.
+- **Vertical TimeDate & Workspaces**:
+  - `timedate/SideTimeDateWidget.qml` with faces: `faces/SideBadgeFace.qml`, `faces/SideClassicFace.qml`, `faces/SideMaterialFace.qml`.
+  - `workspaces/SideWorkspacesWidget.qml` with faces: `faces/SideNumbersFace.qml`, `faces/SidePacmanFace.qml`, `faces/SidePillsFace.qml`.
+
+### 3. Desktop Canvas Widgets & Faces (`widgets/` & `widgets/faces/`)
+Freely positionable desktop widgets and modular face components located at `~/.local/share/serpantinum/src/quickshell/widgets/`:
+- **Widget Engine & Lifecycle (`widgets/`)**:
+  - `Widget.qml`: Base container handling position, geometry, and layer properties.
+  - `WidgetLoader.qml`: Dynamic QML loader instantiating registered desktop widgets.
+  - `WidgetRedactor.qml`: On-screen editor for interactive widget dragging, resizing, and styling.
+  - `WidgetRegistry.qml`: Catalog mapping widget names to their underlying Face components.
+- **Modular Widget Faces (`widgets/faces/`)**:
+  - **Clock Faces**:
+    - `ClockFaceAnalog.qml`: Classical analog clock with moving hour, minute, and second hands.
+    - `ClockFaceDigital.qml`: Big digital time display.
+    - `ClockFaceMaterial.qml`: Material You layout clock with stacked hours and minutes.
+    - `ClockFaceMaterialAnalog.qml`: Material-styled analog dial.
+    - `ClockFaceMaterialLumen.qml`: Lumen luminous styling clock.
+    - `ClockFaceMinimal.qml`: Stripped-down minimalist clock face.
+  - **Media & Visualizer Faces**:
+    - `MusicFace.qml`: Full desktop media card with cover art, progress bar, and metadata.
+    - `MusicFaceRound.qml`: Circular album art turntable player.
+    - `VisualizerFace.qml`: Standalone desktop audio spectrum visualizer.
+    - `VisualizerFaceContinuous.qml`: Continuous wave visualizer for desktop audio rendering.
+  - **Hardware Utilization Faces (`widgets/faces/usage/`)**:
+    - `CpuFace.qml`: Processor load meter and frequency gauges.
+    - `RamFace.qml`: Physical RAM and swap space utilization ring.
+    - `DiskFace.qml`: Filesystem storage capacity breakdown.
+    - `TempFace.qml`: Thermal sensor monitoring for CPU/GPU.
+  - **User & Environment Faces**:
+    - `BatteryFace.qml`: Dedicated desktop battery monitor and charging rate gauge.
+    - `UserFace.qml`: User profile avatar and hostname presentation.
+    - `WeatherFaceCompact.qml`: Small-footprint desktop weather overview.
+    - `WeatherFaceFull.qml`: Multi-day desktop weather forecast widget.
+    - `WeatherFaceRound.qml`: Circular gauge weather widget.
+    - `ImageFaceRect.qml`, `ImageFaceRound.qml`, `ImageFaceRounded.qml`: Custom wallpaper/photo frames for desktop decoration.
+
+### 4. Overlays, Popups, and Floating Shell Panes
+Floating panels and transient popouts triggered via bar clicks, keybindings, or IPC:
+- **Popouts & Menus**:
+  - `calendar/CalendarPopup.qml`: Interactive calendar modal triggered from the date widget.
+  - `media/MusicPopup.qml`: Detailed MPRIS media player popout.
+  - `network/NetworkPopup.qml`: Wi-Fi scanning, connection selector, and VPN manager.
+  - `volume/VolumePopup.qml`: Per-application audio mixer and PipeWire output sink router.
+  - `popouts/Osd.qml`: On-screen display for volume, brightness, and mute changes.
+  - `popouts/PopoutManager.qml`: Central manager coordinating popout positions and auto-dismissal.
+  - `popouts/SideMusicPopout.qml`: Dedicated side-anchored music popout.
+  - `popouts/TrayBase.qml`: Generic flyout frame for system tray context items.
+- **Full Shell Panels & Overlays**:
+  - `launcher/Launcher.qml`: Full application launcher and command prompt.
+  - `clipboard/Clipboard.qml`: Clipboard history manager and quick-paste picker.
+  - `dock/Dock.qml`: Floating application dock.
+  - `lock/Lock.qml` & `lock/VideoLock.qml`: Lock screen implementations with live video background support.
+  - `idle/Idle.qml`: Screen dimmer and inactivity lock trigger.
+  - `polkit/Polkit.qml` & `polkit/PolkitService.qml`: Privilege escalation authentication dialog.
+  - `screenshot/ScreenshotOverlay.qml`: Region and window screenshot selection overlay.
+  - `syspanel/SystemPanel.qml`: Central control center quick-settings panel.
+- **Quickactions Floating Utilities (`quickactions/` & `quickactions/actions/`)**:
+  - `quickactions/Floating.qml`: Window frame hosting floating utility widgets.
+  - `actions/Dock.qml`: Quickaction dock switch.
+  - `actions/DrawAction.qml`: Screen annotation and whiteboard drawing canvas.
+  - `actions/SystemUsage.qml`: Detailed live resource usage inspector.
+  - `actions/Timer.qml`: Floating stopwatch and countdown timer.
+- **Notification Daemon (`notifications/`)**:
+  - `notifications/NotificationManager.qml`: Global notification listener and priority dispatch.
+  - `notifications/NotificationPopups.qml`: Toast popup container rendered on screen.
+  - `notifications/NotificationCenter.qml`: Historic notification tray and action center.
+  - `notifications/Notification.qml`: Individual notification card delegate.
+  - `notifications/types/`: Specialized notification delegates (`Default.qml`, `Screenshot.qml`, `Update.qml`, `Weather.qml`).
+- **Wallpaper System (`wallpaper/`)**:
+  - `wallpaper/WallpaperEngine.qml`: Desktop background renderer supporting static images and live shaders.
+  - `wallpaper/WallpaperPicker.qml`: Visual wallpaper selector and theme trigger.
+
+---
+
 ## Detailed Modifications
 
 ### 1. Cover Art Processing & Gradient Extraction (`src/quickshell/media/art_fetch.sh`)
