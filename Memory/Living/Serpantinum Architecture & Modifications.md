@@ -234,6 +234,16 @@ Floating panels and transient popouts triggered via bar clicks, keybindings, or 
 ### 6. Fastfetch Config Recovery
 - **Location**: Permanent backup preserved at `~/.local/share/caelestia/fastfetch/config.jsonc`, restored into `~/.config/fastfetch/config.jsonc`.
 
+### 7. Idle Lockscreen Floating Media Card (`src/quickshell/lock/Lock.qml`)
+- **Context & Design**: Restored the Android 14/15-styled floating media pill card anchored below `clockModule` during the idle lockscreen state.
+- **Dynamic Offset**: When `isMediaActive` is true, `clockModule.anchors.verticalCenterOffset` smoothly animates from centered (`-40 * s`) upward to `-130 * s` to make room for `mediaModule`. When password input opens (`screenRoot.inputActive = true`), both the clock and media card animate out to reveal `mainDashboardShell`.
+- **Visuals & CAVA Synchronization**:
+  - Outlined with dynamic beat-pulsing ambient glow driven by `Cava.barLevels`.
+  - Background container features heavily blurred album art masked with `MultiEffect` to eliminate corner bleeding beyond the 26px rounded border.
+  - Interactive squiggly waveform canvas oscillating on active playback with seek-scrubbing support.
+  - 4-bar mini CAVA equalizer and responsive playback controls (`Previous`, `Play/Pause`, `Next`).
+  - Automatically activates and tears down `Cava.registerConsumer()` / `Cava.unregisterConsumer()` based on lock state and active playback.
+
 ---
 
 ## Operational Commands & Debugging
