@@ -1,7 +1,10 @@
 ---
 tags: [session, usb, ventoy, multi-boot]
+parent: "[[Living]]"
 ---
 # Session Note — 2026-09-19
+
+- Up: [[Living]]
 
 ## USB Setup (Terminal-First)
 - Device: `/dev/sdc` (29.5G, USB, Alcor `058f:6387`, Generic Flash Disk, serial `E312F9D9`)

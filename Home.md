@@ -23,6 +23,7 @@ Welcome to your central personal vault. All notes are indexed into cohesive topi
 | **🌐 Networking** | CompTIA Network+ certification prep, physical cabling standards, routing protocols, and cloud WANs. | [[Computer Networks MOC]] |
 | **🎓 Academics** | University curriculum spanning foundational computer science (Semester 3) and specialized engineering tracks (Semester 5). | [[Academic MOC]] |
 | **🎌 Japanese** | Conversational fluency, The Moe Way immersion tracking, JLPT N5-N3 benchmarks, and Renshuu/Anki sync. | [[Japanese Language MOC]] |
+| **🧠 Memory** | System session logs, active configuration states, daily timeline checkpoints, and failure postmortems. | [[Memory]] |
 
 ---
 
@@ -76,8 +77,8 @@ LIMIT 12
 - `#sysadmin` — [[Linux System Administration & Automation]]
 - `#machinelearning` — [[Machine Learning Foundations & Supervised Learning]]
 - `#japanese` — [[Japanese Language MOC]]
-- `#memory` — [[Memory/Graph Connection]]
-- `#mistakes` — [[Memory/Mistakes]]
-- `#living` — [[Memory/Living]]
-- `#daily` — [[Memory/Daily]]
-- `#archive` — [[Memory/Archive]]
+- `#memory` — [[Memory]]
+- `#mistakes` — [[Mistakes]]
+- `#living` — [[Living]]
+- `#daily` — [[Daily]]
+- `#archive` — [[Archive]]
