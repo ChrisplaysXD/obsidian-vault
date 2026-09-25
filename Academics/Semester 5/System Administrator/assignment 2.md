@@ -42,7 +42,8 @@ NGINX load balancing method
 - **Least Time**: Available in **NGINX Plus**, this algorithm selects the server with the lowest latency and fewest active connections.
     
 - **Random**: Available in **NGINX Plus**, suitable for distributed environments where load balancers lack a full view of all requests.
-
+PHP
+	
 2. Install ufw. Set to allow "Nginx HTTP"
 	ufw is a program that help manage firewall rule
 3. install ftp server.
