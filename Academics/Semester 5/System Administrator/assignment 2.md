@@ -8,6 +8,11 @@ reverse proxy
 	A reverse proxy is a server that sits in front of web servers and forwards client(web browser) to a web server
 NGINX is frequently paired with **PHP-FPM** (for PHP applications), **Gunicorn** or **uWSGI** (for Python applications), and **PM2** (for Node.js applications) to handle dynamic content generation
 
+For enterprise-level management and security, NGINX is often integrated with **F5 NGINX One** for observability, **NGINX Controller** for API management, and **F5 WAF** (Web Application Firewall) for Layer 7 attack protection.
+
+NGINX load balancing
+	
+
 2. Install ufw. Set to allow "Nginx HTTP"
 	ufw is a program that help manage firewall rule
 3. install ftp server.
