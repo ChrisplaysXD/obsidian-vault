@@ -95,6 +95,11 @@ li::before{content:'';position:absolute;left:4px;top:10px;width:10px;height:10px
 /* Footer note */
 .note{font-size:0.75rem;color:rgba(158,179,216,0.5);margin-top:40px;padding-top:20px;border-top:1px solid rgba(91,174,255,0.1);text-align:center}
 
+/* Decorative server/cloud cyber theme backgrounds */
+.cyber-decor{position:absolute;pointer-events:none;overflow:hidden;opacity:0.1;z-index:0}
+.cyber-decor .decor-server{position:absolute;top:15px;right:15px;width:140px;height:140px;color:var(--accent);opacity:0.7;filter:drop-shadow(0 0 25px rgba(91,174,255,0.4))}
+.cyber-decor .decor-clouds{position:absolute;bottom:15px;left:15px;width:120px;height:120px;color:var(--accent2);opacity:0.6;filter:drop-shadow(0 0 20px rgba(58,139,222,0.3))}
+
 /* Responsive */
 @media(max-width:900px){
   h1{font-size:2.2rem}.hero h1{font-size:2.8rem}
@@ -162,6 +167,11 @@ li::before{content:'';position:absolute;left:4px;top:10px;width:10px;height:10px
   </div>
   <div class="badge">01 / 5</div>
   <h2>Apa Itu Cloud Storage?</h2>
+
+  <div class="cyber-decor" aria-hidden="true">
+    <svg class="decor-server" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4V2.667z"/><path d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.667-1.194 6.667-2.667V6.334a6.51 6.51 0 0 1-1.458.79C11.81 7.684 9.967 8 8 8c-1.966 0-3.809-.317-5.208-.876a6.508 6.508 0 0 1-1.458-.79z"/><path d="M14.667 11.668a6.51 6.51 0 0 1-1.458.789c-1.4.56-3.242.876-5.21.876-1.966 0-3.809-.316-5.208-.876a6.51 6.51 0 0 1-1.458-.79v1.666C1.333 14.806 4.318 16 8 16s6.667-1.194 6.667-2.667v-1.665z"/></svg>
+    <svg class="decor-clouds" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M16 7.5a2.5 2.5 0 0 1-1.456 2.272 3.513 3.513 0 0 0-.65-.824 1.5 1.5 0 0 0-.789-2.896.5.5 0 0 1-.627-.421 3 3 0 0 0-5.22-1.625 5.587 5.587 0 0 0-1.276.088 4.002 4.002 0 0 1 7.392.91A2.5 2.5 0 0 1 16 7.5z"/><path d="M7 5a4.5 4.5 0 0 1 4.473 4h.027a2.5 2.5 0 0 1 0 5H3a3 3 0 0 1-.247-5.99A4.502 4.502 0 0 1 7 5zm3.5 4.5a3.5 3.5 0 0 0-6.89-.873.5.5 0 0 1-.51.375A2 2 0 1 0 3 13h8.5a1.5 1.5 0 1 0-.376-2.953.5.5 0 0 1-.624-.492V9.5z"/></svg>
+  </div>
 
   <div class="two-col">
     <div>
