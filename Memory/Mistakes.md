@@ -28,6 +28,14 @@ Future fix reference format: "This prevented XYZ, as documented in MISTAKES.md."
 - Result after fix: Bars immediately blend across vibrant Matugen-derived album art colors and update in real-time on track change.
 - Prevention: Audit Quickshell C++/Qt service types before writing bindings; decouple thematic metadata from transport states; version cache assets so generator updates invalidate obsolete files automatically.
 
+## 2026-09-28 — Incorrect upstream divergence claim + blocked full pull to installed directory
+- Symptom: User stated "there's 21 changes made to the main repo"; `git rev-list --count master..serpantinum-custom` showed 1 custom commit (`186d6d0`). Attempted full `git pull` into `/home/chrisplaysxd/.local/share/serpantinum/` blocked by ~500 untracked installed assets (fonts, sounds, bin scripts) — a full merge would have overwritten them.
+- Root cause: Divergence was not verified with `git log --oneline --graph` before merging; installed `.local/share/serpantinum/` contains package assets that don't exist in the clean repo (`src/assets/fonts/`, `sounds/`, etc.), making full pull unsafe.
+- Fix attempted: Switched to selective file checkout (`git checkout origin/serpantinum-custom -- <files>`) pulling only the 3 changed files (`Main.qml`, `quickshell-overview.qml`, `shell.qml`). Confirmed installed version (`2.1.9` / `9f0e36b`) == upstream master.
+- Result after fix: Custom files applied safely to running setup; no asset loss; git initialized and tracked in `.local/share/serpantinum/`.
+- Prevention: Before any pull to installed directory, run `git diff master..branch --stat` to confirm divergence count; if installed assets exist, never use full merge — use selective checkout or initialize a separate clone and copy only changed source files. Verify upstream divergence claims with `git rev-list --count` rather than assumption. This prevented asset loss, as documented in MISTAKES.md.
+- Related: Fork branch `serpantinum-custom` pushed; session note `Session Note - 2026-09-28` saved; external `quickshell-overview.qml` URL content still unreached (user selected "provide content" but never pasted it).
+
 ---
 RULE: Record every mistake/failure with root cause + prevention reference. Format: 'This prevented XYZ, as documented in MISTAKES.md.'
 
