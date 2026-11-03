@@ -41,3 +41,10 @@ RULE: Record every mistake/failure with root cause + prevention reference. Forma
 
 ---
 GRAPH CONNECTION: See [[Attachments/vault_graph.svg]] for vault node/edge visualization. Memory folders (Living/Daily/Archive) link to main vault graph.
+
+## 2026-10-23 — Notebook grid indexing out of bounds (erosion-dilation task)
+- Symptom: `nbconvert --execute` failed with `IndexError: index 5 is out of bounds for axis 1 with size 5` on the summary cell of `Tugas_Erosion_Dilation.ipynb`.
+- Root cause: Summary grid was 3 rows x 5 columns but loop still tried to write 6 columns (`enumerate(..., start=3)` with 3 keys -> columns 3,4,5). Column count mismatch after redesigning the layout.
+- Fix attempted: Collapsed the 3 dilation-5x5 keys into a single summary column (ellipse 5x5) so each row maps exactly to the 5 columns: ori, erosion, dilation-ellipse, dilation-cross, dilation-rectangle.
+- Result after fix: Notebook executed cleanly, 0 errors, 9 figures embedded.
+- Prevention: When changing subplot grid dimensions, recount every `enumerate` start/length against `plt.subplots` dimensions before executing. This prevented shipping a broken notebook, as documented in MISTAKES.md.
