@@ -9,5 +9,6 @@
       
 - [ ] Polytron
 - [ ] Curcool
-- [ ] SMP
+- [x] SMP ✅ 2026-11-04
 - [ ] GSI
+- [x] MKP ✅ 2026-11-04
