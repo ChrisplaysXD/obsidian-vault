@@ -1,0 +1,11 @@
+Network Types
+- WAN(Wide Area Network)
+	- tldr WAN=internet
+- LAN(Local Area Network)
+	- example: connecting to college ethernet via cable
+- WLAN(Wireless Local Area Network)
+	- same as lan but can connect via wireless
+- VPN(Virtual Private Network)
+- GAN(Global Area Network)
+- MAN(Metropolitan Area Network)
+- WPAN(Wireless Personal Area Network)
