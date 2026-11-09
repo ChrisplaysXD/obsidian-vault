@@ -14,5 +14,6 @@ Network Types
 	- SSL VPN
 		similar to remote access vpn but it use SSL/TLS to encrypt the connection between users and the internal network
 - GAN(Global Area Network)
+	
 - MAN(Metropolitan Area Network)
 - WPAN(Wireless Personal Area Network)
