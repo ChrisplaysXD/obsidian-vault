@@ -49,3 +49,12 @@ Network topologies are divided into the following eight basic types:
 | Star           | Ring        |
 | Mesh           | Tree        |
 | Hybrid         | Daisy chain |
+## Point-to-Point
+
+ The simplest network topology with a dedicated connection between two hosts is the `point-to-point` topology. In this topology, a direct and straightforward physical link exists only between `two hosts`. These two devices can use these connections for mutual communication.
+
+`Point-to-point` topologies are the basic model of traditional telephony and must not be confused with `P2P` (`Peer-to-Peer` architecture).
+
+#### Point-To-Point Topology
+
+![image](https://cdn.services-k8s.prod.aws.htb.systems/content/modules/34/redesigned/topo_p2p.png)
