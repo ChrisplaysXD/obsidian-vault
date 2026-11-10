@@ -588,4 +588,9 @@ best method (256- the block size)
 Submit the broadcast address of the following CIDR: 10.200.20.0/27
 answer=10.200.20.31
 tips: use the leftover bit method(2<sup>32-cidr</sup>).
-/27=32-27=5=2<sup></sup>
+/27=32-27=5=2<sup>5</sup>=32 ip per block
+then  find the first next subnet then reduce by 1.
+since the subnet start from 0 and the size is 32 then the next subnet is 32 so broadcast address=32-1=31.
+### question 3
+Split the network 10.200.20.0/27 into 4 subnets and submit the network address of the 3rd subnet as the answer.
+answer=10.200.20.16
