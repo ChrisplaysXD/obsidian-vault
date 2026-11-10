@@ -579,4 +579,13 @@ The tricky part of this is getting the actual IP Address range because 0 is a nu
 ### question 1
 Submit the decimal representation of the subnet mask from the following CIDR: 10.200.20.0/27
 answer: 255.255.255.224
+tips: 27 mean the first 27 bit is valued 1(network bits) and that left 5 host bit valued 0.
+best method (256- the block size)
+	find how many bit host left=32-27=5.
+	count the block size(total ip)=2<sup>5</sup>=32.
+	256-32=<u>224</u>.
 ### question 2
+Submit the broadcast address of the following CIDR: 10.200.20.0/27
+answer=10.200.20.31
+tips: use the leftover bit method(2<sup>32-cidr</sup>).
+/27=32-27=5=2<sup></sup>
