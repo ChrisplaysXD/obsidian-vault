@@ -1,4 +1,4 @@
-Network Types
+### Network Types
 - WAN(Wide Area Network)
 	- tldr WAN=internet
 - LAN(Local Area Network)
@@ -18,4 +18,7 @@ Network Types
 - MAN(Metropolitan Area Network)
 	a network that connect several lan in geographical proximity
 - WPAN(Wireless Personal Area Network)/PAN(personal area network)
-	a network in form of cable or wireless(bluetooth or wireless usb) to onnect multiple modern end device to form a network to 
+	a network in form of cable or wireless(bluetooth or wireless usb) to onnect multiple modern end device to form a network to enable data exchange
+## Network Topology
+A `network topology` is a typical arrangement and `physical` or `logical` connection of devices in a network. Computers are `hosts`, such as `clients` and `servers`, that actively use the network. They also include `network components` such as `switches`, `bridges`, and `routers`, which have a distribution function and ensure that all network hosts can establish a logical connection with each other. The network topology determines the components to be used and the access methods to the transmission media.
+In contrast, the `logical topology` is how the signals act on the network media or how the data will be transmitted across the network from one device to the devices' physical connection.
