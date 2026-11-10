@@ -41,3 +41,11 @@ We can divide the entire network topology area into three areas:
 
 3. Classifications
 	We can imagine a topology as a virtual form or `structure of a network`. This form does not necessarily correspond to the actual physical arrangement of the devices in the network. Therefore these topologies can be either `physical` or `logical`.
+Network topologies are divided into the following eight basic types:
+
+|                |             |
+| -------------- | ----------- |
+| Point-to-Point | Bus         |
+| Star           | Ring        |
+| Mesh           | Tree        |
+| Hybrid         | Daisy chain |
