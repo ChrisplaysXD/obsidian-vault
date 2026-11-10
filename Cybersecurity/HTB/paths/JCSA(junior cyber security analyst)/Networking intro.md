@@ -14,6 +14,8 @@ Network Types
 	- SSL VPN
 		similar to remote access vpn but it use SSL/TLS to encrypt the connection between users and the internal network
 - GAN(Global Area Network)
-	
+	a world wide network example: internet
 - MAN(Metropolitan Area Network)
-- WPAN(Wireless Personal Area Network)
+	a network that connect several lan in geographical proximity
+- WPAN(Wireless Personal Area Network)/PAN(personal area network)
+	a network in form of cable or wireless(bluetooth or wireless usb) to onnect multiple modern end device to form a network to 
