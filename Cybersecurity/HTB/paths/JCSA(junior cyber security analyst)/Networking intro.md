@@ -579,3 +579,4 @@ The tricky part of this is getting the actual IP Address range because 0 is a nu
 ### question 1
 Submit the decimal representation of the subnet mask from the following CIDR: 10.200.20.0/27
 answer: 255.255.255.224
+### question 2
